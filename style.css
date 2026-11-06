@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;600;700&display=swap');
+
+/* --- Base & Fonts --- */
+body {
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* --- Custom Scrollbar --- */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* --- Panels & Overlay Surfaces --- */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+}
+
+.hud-sidebar {
+  width: 20rem; /* 320px */
+  position: absolute;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  z-index: 10;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow-y: auto;
+  border: 1px solid #1e293b;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+.hud-sidebar-left { left: 0.75rem; }
+.hud-sidebar-right { right: 0.75rem; }
+
+.hud-card {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid #1e293b;
+}
+
+.hud-cell {
+  background: rgba(2, 6, 23, 0.7);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #1e293b;
+}
+
+.hud-cell-sm {
+  background: rgba(2, 6, 23, 0.7);
+  padding: 0.375rem;
+  border-radius: 0.25rem;
+  border: 1px solid #1e293b;
+}
+
+.hud-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+}
+
+/* --- Buttons & Controls --- */
+.btn-utility {
+  padding: 0.375rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 0.25rem;
+  border: 1px solid #334155;
+  background-color: #1e293b;
+  color: #cbd5e1;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+.btn-utility:hover {
+  background-color: #334155;
+  color: #f1f5f9;
+}
+.btn-utility.active {
+  border-color: #06b6d4;
+  background-color: rgba(6, 182, 212, 0.2);
+  color: #67e8f9;
+}
+
+.btn-mode {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  border: 1px solid #334155;
+  background-color: #1e293b;
+  color: #94a3b8;
+  transition: all 0.15s ease-in-out;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+.btn-mode:hover {
+  color: #e2e8f0;
+  background-color: #334155;
+}
+.btn-mode.active {
+  border-color: #06b6d4;
+  background-color: rgba(6, 182, 212, 0.2);
+  color: #67e8f9;
+}
+.btn-mode.active:hover {
+  background-color: rgba(6, 182, 212, 0.3);
+}
+
+.btn-preset {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #1e293b;
+  color: #cbd5e1;
+  border: 1px solid #334155;
+  font-size: 11px;
+  text-align: left;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+.btn-preset:hover {
+  background-color: #334155;
+}
+
+.btn-spawn {
+  padding: 0.25rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 10px;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+.btn-spawn-overhang {
+  background-color: rgba(49, 46, 129, 0.4);
+  color: #a5b4fc;
+  border: 1px solid rgba(67, 56, 202, 0.5);
+}
+.btn-spawn-overhang:hover {
+  background-color: rgba(49, 46, 129, 0.6);
+}
+.btn-spawn-bump {
+  background-color: rgba(120, 53, 15, 0.4);
+  color: #fcd34d;
+  border: 1px solid rgba(180, 83, 9, 0.5);
+}
+.btn-spawn-bump:hover {
+  background-color: rgba(120, 53, 15, 0.6);
+}
+.btn-spawn-block {
+  background-color: rgba(6, 78, 59, 0.4);
+  color: #6ee7b7;
+  border: 1px solid rgba(4, 120, 87, 0.5);
+}
+.btn-spawn-block:hover {
+  background-color: rgba(6, 78, 59, 0.6);
+}
+
+/* --- GPIO Matrix & Sensor Badges --- */
+.gpio-row {
+  background: #020617;
+  padding: 0.375rem;
+  border-radius: 0.25rem;
+  border: 1px solid #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gpio-badge {
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 10px;
+  font-weight: 700;
+}
+.gpio-badge.high {
+  background: #022c22;
+  color: #34d399;
+}
+.gpio-badge.low {
+  background: #0f172a;
+  color: #64748b;
+  font-weight: normal;
+}
+.gpio-badge.pwm {
+  background: rgba(8, 47, 73, 0.8);
+  color: #22d3ee;
+}
+
+.sensor-badge {
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  color: #64748b;
+  text-align: center;
+  transition: all 0.15s ease-in-out;
+}
+.sensor-badge.active {
+  background-color: #450a0a;
+  border-color: rgba(239, 68, 68, 0.5);
+  color: #f87171;
+  font-weight: 700;
+}
+
+/* --- Truth Table Override Buttons --- */
+.truth-btn {
+  width: 100%;
+  padding: 0.375rem;
+  border-radius: 0.25rem;
+  background-color: #020617;
+  border: 1px solid #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  transition: background-color 0.15s ease-in-out;
+  cursor: pointer;
+}
+.truth-btn:hover {
+  background-color: #1e293b;
+}
